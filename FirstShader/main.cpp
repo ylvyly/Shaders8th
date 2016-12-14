@@ -32,7 +32,6 @@
 #include <VertexTriangleAdjacency.h>
 
 
-
 GLuint v, f, p;
 float lpos[4] = { 1,0.5,1,0 };
 double rotAngle = 5; // a global variable
@@ -140,15 +139,7 @@ bool loadModel(const char* path)
 
 			aiVector3D normal = mesh->mNormals[face.mIndices[j]];
 			memcpy(normalArray, &normal, sizeof(float) * 3);
-			normalArray += 3;
-
-			/*
-			aiFace *faceT = //mesh->mFaces[i];
-			Assimp::VertexTriangleAdjacency vtAdjacency(faceT, i, i, true);
-			vtAdjacency.GetAdjacentTriangles(i);
-
-			unsigned int* test = vtAdjacency.GetAdjacentTriangles(i);
-			*/
+			normalArray += 3;			
 
 			aiVector3D pos = mesh->mVertices[face.mIndices[j]];
 			memcpy(vertexArray, &pos, sizeof(float) * 3);
@@ -165,6 +156,13 @@ bool loadModel(const char* path)
 				//printf_s("has tangents");
 			}
 		}
+		//try to get adjacent triangles for image filtering inf frag shader
+		//aiFace *faceT = &mesh->mFaces[i];
+		//Assimp::VertexTriangleAdjacency vtAdjacency(faceT, i, i, true);
+		//vtAdjacency.GetAdjacentTriangles(i);
+		//unsigned int* test = vtAdjacency.GetAdjacentTriangles(i);
+		// first we need to build a vertex-triangle adjacency list
+		Assimp::VertexTriangleAdjacency adj(mesh->mFaces, mesh->mNumFaces, mesh->mNumVertices, true);
 	}
 
 	uvArray -= mesh->mNumFaces * 3 * 2;
