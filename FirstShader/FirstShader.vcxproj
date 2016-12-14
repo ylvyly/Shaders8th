@@ -39,13 +39,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>glut37\glut-3.7\include;glew\glew-2.0.0\include;assimp\include;soil\src;glm\glm;glew-2.0.0-win32\glew-2.0.0\include;$(IncludePath)</IncludePath>
+    <IncludePath>assimpNew\assimp-master\code;assimpNew\assimp-master\include;glut37\glut-3.7\include;glew\glew-2.0.0\include;assimp\include;soil\src;glm\glm;glew-2.0.0-win32\glew-2.0.0\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>Libs;assimp\lib\assimp_release-dll_win32;glew-2.0.0-win32\glew-2.0.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <SourcePath>glew\glew-2.0.0\src;$(SourcePath)</SourcePath>
+    <SourcePath>assimpNew\assimp-master\code;glew\glew-2.0.0\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -72,6 +72,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="assimpNew\assimp-master\code\VertexTriangleAdjacency.h" />
     <ClInclude Include="common_header.h" />
     <ClInclude Include="glew\glew-2.0.0\include\GL\eglew.h" />
     <ClInclude Include="glew\glew-2.0.0\include\GL\glew.h" />

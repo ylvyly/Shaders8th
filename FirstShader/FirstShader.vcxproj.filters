@@ -58,5 +58,8 @@
     <ClInclude Include="gltools-master\gltools-master\include\GLTools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="assimpNew\assimp-master\code\VertexTriangleAdjacency.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
